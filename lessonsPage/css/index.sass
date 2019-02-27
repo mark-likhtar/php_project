@@ -1,0 +1,59 @@
+@font-face
+  font-family: "poiret"
+  src: url("../font/PoiretOne-Regular.ttf")
+    
+$pink: #e9b8ac
+$lightGray: #e9e9e9
+$darkGray: #ccd0d7
+    
+body
+    padding: 0
+    margin: 0
+    background-color: #f9faf5
+    overflow-x: hidden
+
+.post
+    padding: 0
+    background-color: $lightGray
+    margin-bottom: 10px
+    font-family: poiret
+    border-radius: 15px
+    transition: 0.2s all ease
+    cursor: pointer
+    height: 177px
+    width: 80vw
+    &:hover
+        background-color: $darkGray
+
+.post_headline
+    background-color: $pink
+    margin: 0
+    padding: 10px 0 10px 30px
+    font-size: 1.5em
+    border-top-left-radius: 15px
+
+.post_content
+    padding: 10px 0 15px 30px
+    width: 825px
+    height: 96px
+    overflow: hidden
+    line-height: 22px
+
+.language
+    padding: 0 !important
+    &_list
+        background-color: $lightGray
+        border-radius: 15px
+        padding: 20px 0
+        display: flex
+        flex-direction: column
+        & a 
+            width: 100%
+            color: #000
+            font-family: poiret
+            padding: 3px 0 5px 30px
+            font-size: 1.3em
+            &:hover
+                background-color: $darkGray
+                text-decoration: none
+                color: #000
