@@ -3,10 +3,10 @@
   src: url("../font/PoiretOne-Regular.ttf");
 }
 
-body {
+body, html {
   padding: 0;
   margin: 0;
-  background-color: #f9faf5;
+  background-color: #f9faf5 !important;
   overflow-x: hidden;
 }
 
@@ -73,4 +73,19 @@ body {
   background-color: #ccd0d7;
   text-decoration: none;
   color: #000;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.navbar-brand img {
+  width: 350px;
+}
+
+.nav-item {
+  font-size: 1.6em;
+  font-family: poiret;
+  color: #000;
+  margin-left: 20px;
 }
