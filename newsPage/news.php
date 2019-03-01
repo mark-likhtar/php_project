@@ -16,7 +16,7 @@ include('header.html');
 <div class='row'>
     <div class="col-md-3 language">
 <?php
-include('languages.html');
+include('languages.php');
 ?>
 </div>
 <div class="col-md-9">

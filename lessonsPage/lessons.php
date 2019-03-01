@@ -10,26 +10,25 @@
 </head>
 <body>
     <div class="container">
-<?php
-include('header.html');
-?>
-<div class='row'>
-    <div class="col-md-3 language">
-<?php
-include('languages.html');
-?>
+        <?php
+            include('header.html');
+        ?>
+        <div class='row'>
+            <div class="col-md-3 language">
+                    <?php
+                        include('languages.php');
+                    ?>
+            </div>
+            <div class="col-md-9">
+                <?php
+                    include('items.php');
+                ?>
+            </div>
+        </div>
+        <?php
+            include('footer.html');
+        ?>
 </div>
-<div class="col-md-9">
-<?php
-    include('items.php')
-?>
-</div>
-</div>
-<?php
-include('footer.html');
-?>
-</div>
-
 <script src='js/index.js'></script>
 </body>
 </html>
