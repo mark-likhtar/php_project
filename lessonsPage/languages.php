@@ -11,11 +11,20 @@
     if($result)
     {
         echo "<div class='language_list'>";
+        echo "<a id='all' href='?'>All</a>";
         $rows = mysqli_num_rows($result);
         for ($i = 0 ; $i < $rows ; ++$i)
         {
             $row = mysqli_fetch_row($result);
-            echo "<a id=".$row[0]." href=?".$row[0].">".ucfirst($row[0])."</a>";
+            if($row[0] === 'c_sharp'){
+                echo "<a id=".$row[0]." href=?".$row[0].">C#</a>";
+            }
+            else if($row[0] === 'c_plus'){
+                echo "<a id=".$row[0]." href=?".$row[0].">C++</a>";
+            }
+            else{
+                echo "<a id=".$row[0]." href=?".$row[0].">".ucfirst($row[0])."</a>";
+            }
         }
         echo "</div>";
     }

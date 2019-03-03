@@ -21,7 +21,7 @@ body, html {
   transition: 0.2s all ease;
   cursor: pointer;
   height: 177px;
-  width: 80vw;
+  width: 100%;
 }
 
 .post:hover {
@@ -29,19 +29,35 @@ body, html {
 }
 
 .post_headline {
-  background-color: #e9b8ac;
+  background-color: #aad1d9;
   margin: 0;
-  padding: 10px 0 10px 30px;
+  padding: 10px 30px 10px 30px;
   font-size: 1.5em;
   border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .post_content {
-  padding: 10px 0 15px 30px;
-  width: 825px;
+  padding: 10px 30px 15px 30px;
   height: 96px;
   overflow: hidden;
   line-height: 22px;
+}
+
+.post a {
+  outline: none;
+  color: #000;
+}
+
+.post a:hover {
+  color: #000;
+  text-decoration: none;
 }
 
 .language {
@@ -88,4 +104,59 @@ body, html {
   font-family: poiret;
   color: #000;
   margin-left: 20px;
+}
+
+.likes {
+  font-size: 0.9em;
+}
+
+.likes img {
+  margin: 0 3px 7px 0;
+}
+
+.page_headline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-family: poiret;
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.page_headline_head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.page_content {
+  font-family: poiret;
+  font-size: 1.5em;
+  text-align: justify;
+}
+
+.page_likes {
+  font-size: 0.8em;
+}
+
+.page_likes img {
+  width: 35px;
+  margin-bottom: 10px;
+}
+
+.line {
+  width: 7px;
+  height: 52px;
+  border-radius: 10px;
+  background-color: #aad1d9;
+  margin-right: 10px;
 }
