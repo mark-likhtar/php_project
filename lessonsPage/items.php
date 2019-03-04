@@ -4,7 +4,6 @@
     $user = "mysql";
     $password = "mysql";
     $link = mysqli_connect($host, $user, $password, $database) or die("Ошибка " . mysqli_error($link));
-
     $url = $_SERVER['REQUEST_URI'];
     $url = explode('?', $url)[1];
 
