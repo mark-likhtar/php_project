@@ -11,7 +11,7 @@
     if($result)
     {
         echo "<div class='language_list'>";
-        echo "<a id='all' href='?'>All</a>";
+        echo "<a id='all' href='/DBlog/lessonsPage/lessons.php'>All</a>";
         $rows = mysqli_num_rows($result);
         for ($i = 0 ; $i < $rows ; ++$i)
         {

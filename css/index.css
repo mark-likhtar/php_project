@@ -92,7 +92,7 @@ body, html {
 }
 
 .navbar {
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 .navbar-brand img {
@@ -104,6 +104,10 @@ body, html {
   font-family: poiret;
   color: #000;
   margin-left: 20px;
+}
+
+.nav-item .underline {
+  border-bottom: 1px solid #ccd0d7;
 }
 
 .likes {
@@ -146,15 +150,23 @@ body, html {
 
 .page_likes {
   font-size: 0.8em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.page_likes img {
+.page_likes input {
+  margin-top: 8px;
+  background-color: #f9faf5;
+  border: none;
+  height: 35px;
   width: 35px;
-  margin-bottom: 10px;
+  background: url("https://img.icons8.com/ios/50/000000/hearts.png");
+  background-size: 35px 35px;
 }
 
 .line {
-  width: 7px;
+  width: 6px;
   height: 52px;
   border-radius: 10px;
   background-color: #aad1d9;

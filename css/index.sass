@@ -65,7 +65,7 @@ body, html
                 color: #000
 
 .navbar
-    margin-bottom: 20px
+    margin: 20px 0
 
 .navbar-brand img
     width: 350px
@@ -75,6 +75,8 @@ body, html
     font-family: poiret
     color: #000
     margin-left: 20px
+    & .underline
+        border-bottom: 1px solid $darkGray
 
 .likes
     font-size: 0.9em
@@ -98,12 +100,20 @@ body, html
         text-align: justify
     &_likes
         font-size: 0.8em
-        & img
+        display: flex
+        & input
+            margin-top: 8px
+            background-color: #f9faf5
+            border: none
+            height: 35px
             width: 35px
-            margin-bottom: 10px
+            background: url('https://img.icons8.com/ios/50/000000/hearts.png')
+            background-size: 35px 35px
+            
+        
 
 .line
-    width: 7px
+    width: 6px
     height: 52px
     border-radius: 10px
     background-color: $pink
