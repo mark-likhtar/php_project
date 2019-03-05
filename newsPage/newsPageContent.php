@@ -23,14 +23,14 @@
             $likeCount=++$row[2];
             $query_like = "UPDATE `post` SET `likes`='$likeCount' WHERE `post_id` = '$url'";
             mysqli_query($link, $query_like) or die("Ошибка ". mysqli_error($link));
-        }    
+        }
         echo "<div class='page_headline'>";
         echo "<div class='page_headline_head'>";
         echo "<div class='line'></div>";
         echo $row[0];
         echo "</div>";
         echo "<div class='page_likes' >";
-        echo "<div ><form method='POST''><input type='submit' name='likeBut' value=''/></form></div>"."<div>".$row[2]."</div>";
+        echo "<div ><form method='POST''><input type='submit' name='likeBut' value='' id='sub'/></form></div>"."<div>".$row[2]."</div>";
         echo "</div>";
         echo "</div>";
         echo "<div class='page_content'>";

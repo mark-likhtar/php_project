@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,12 @@
 <body>
     <div class="container">
         <?php
+        if($_SESSION['login'] == ''){
             include('../header_footer/header.html');
+        }
+        else{
+            include('../header_footer/header_not_auth.php');
+        }
         ?>
         <div class='row'>
             <div class="col-md-3 language">

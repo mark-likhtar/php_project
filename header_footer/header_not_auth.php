@@ -20,10 +20,9 @@
                 <a class="nav-link" id="postmarks" href="#">Закладки</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="registration" href="/DBlog/registration/registration.php">Регистрация</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="authorization" href="/DBlog/authorization/authorization.php">Авторизация</a>
+                <?php
+                    include('header_account.php');
+                ?>
             </li>
         </ul>
     </div>
