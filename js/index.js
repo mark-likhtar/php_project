@@ -7,6 +7,9 @@ if(location.href === `http://localhost/DBlog/lessonsPage/lessons.php?${url}`) {
 else if(location.href === `http://localhost/DBlog/newsPage/news.php?${url}`) {
     element.style = 'background-color: #ccd0d7'
 }
+else if(location.href === `http://localhost/DBlog/forumPage/forum.php?${url}`) {
+    element.style = 'background-color: #ccd0d7'
+}
 else {
     all.style = 'background-color: #ccd0d7'
 }

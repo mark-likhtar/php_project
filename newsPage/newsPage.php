@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +15,12 @@
 <body>
     <div class="container">
         <?php
-            include('../header_footer/header.html')
+            if($_SESSION['login'] == ''){
+                include('../header_footer/header.html');
+            }
+            else{
+                include('../header_footer/header_not_auth.php');
+            }
         ?>
         <?php
             include('newsPageContent.php')
@@ -21,6 +29,7 @@
             include('../header_footer/footer.html')
         ?>
     </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script> src='../js/index.js'</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 </body>
 </html>

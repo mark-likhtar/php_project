@@ -6,7 +6,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbar1">
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" id="news" href="/DBlog/newsPage/news.php">Новости</a>
             </li>
@@ -14,12 +14,12 @@
                 <a class="nav-link" id="lessons" href="/DBlog/lessonsPage/lessons.php">Уроки</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="forum" href="#">Форум</a>
+                <a class="nav-link" id="forum" href="/DBlog/forumPage/forum.php">Форум</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="postmarks" href="#">Закладки</a>
+                <a class="nav-link" id="liked" href="/DBlog/liked/liked.php">Понравилось</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item right">
                 <?php
                     include('header_account.php');
                 ?>

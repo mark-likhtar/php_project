@@ -1,6 +1,5 @@
 <?php
-if(isset($_POST['likeButon'])) {echo 'Кнопка была нажата';}
-
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,9 +14,14 @@ if(isset($_POST['likeButon'])) {echo 'Кнопка была нажата';}
 </head>
 <body>
     <div class="container">
-    <?php
-        include('../header_footer/header.html')
-    ?>
+        <?php
+            if($_SESSION['login'] == ''){
+                include('../header_footer/header.html');
+            }
+            else{
+                include('../header_footer/header_not_auth.php');
+            }
+        ?>
     <?php
         include('lessonPageContent.php')
     ?>

@@ -7,7 +7,7 @@
     $url = $_SERVER['REQUEST_URI'];
     $url = explode('?', $url)[1];
 
-    $query_name = "SELECT `name`, `content`, `likes`, `post_id` FROM `post` WHERE `type`='lesson'";
+    $query_name = "SELECT post.`name`, post.`content`, COUNT(post_likes.`post_id`), post.`post_id` FROM `post` INNER JOIN `post_likes` ON post.`post_id` = post_likes.`post_id` WHERE post.`type` = 'lesson' GROUP BY post.`post_id` ORDER BY COUNT(post_likes.`post_id`) DESC";
     $result_name = mysqli_query($link, $query_name) or die("Ошибка " . mysqli_error($link));
 
     $query_name_language = "SELECT `name`, `content`, `likes`, `post_id` FROM `post` WHERE `type`='lesson' AND `language`= '$url'";

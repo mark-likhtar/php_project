@@ -22,6 +22,7 @@ body, html
     cursor: pointer
     height: 177px
     width: 100%
+    
     &:hover
         background-color: $darkGray
     &_headline
@@ -66,12 +67,14 @@ body, html
 
 .navbar
     margin: 20px 0
+    padding-left: 0 !important
+    padding-right: 20px !important
 
 .navbar-brand img
-    width: 350px
+    width: 280px
 
 .nav-item
-    font-size: 1.6em
+    font-size: 1.5em
     font-family: poiret
     color: #000
     margin-left: 20px
@@ -110,8 +113,6 @@ body, html
             background: url('https://img.icons8.com/ios/50/000000/hearts.png')
             background-size: 35px 35px
             
-        
-
 .line
     width: 6px
     height: 52px
@@ -123,3 +124,102 @@ body, html
     display: flex
     flex-direction: column
     justify-content: center
+
+.navbar-nav
+    width: 100%
+
+.right
+    position: absolute
+    right: 0
+
+.account_item
+    margin-right: 10px
+    & img 
+        width: 40px
+        margin: 0 7px 7px 0
+        border: 1px solid $darkGray
+        border-radius: 50%
+
+.account
+    &_content
+        background-color: $lightGray
+        width: 60%
+        margin: 0 auto
+        border-radius: 30px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        font-family: poiret
+        padding: 100px 0
+        box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.25)
+    &_name
+        width: auto
+        height: auto
+        padding: 0 
+        margin: 0 auto
+        display: flex
+        padding-bottom: 30px
+        & h1
+            text-align: center
+    &_information
+        text-align: center
+        font-size: 1.2em
+        padding-bottom: 20px
+
+.sign_out
+    background-color: $pink
+    border: 0
+    display: block
+    margin: 0 auto
+    padding: 2px 15px 4px 15px
+    border-radius: 30px
+    transition: 0.3s all ease
+    &:hover
+        opacity: 0.80
+
+.account_line
+    width: 6px
+    height: 43px
+    border-radius: 10px
+    background-color: $pink
+    margin: 5px 5px 0 -30px
+
+.question
+    background-color: $lightGray
+    width: 100%
+    font-size: 1.2em
+    border-radius: 15px
+    display: flex
+    margin-bottom: 10px
+    font-family: poiret
+    transition: 0.2s all ease
+    padding-right: 20px
+    height: 50px
+    &:hover
+        background-color: $darkGray
+    & a
+        color: #000 
+        width: 100%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        &:hover
+            text-decoration: none
+            color: #000 
+    &_circle
+        height: 50px
+        width: 20px !important
+        background-color: $pink
+        border-top-left-radius: 15px   
+        border-bottom-left-radius: 15px
+    &_headline
+        display: flex
+        align-items: center
+    &_name
+        height: 29px
+        overflow: hidden
+        width: 700px
+        margin-left: 20px
+    &_author
+        font-size: 0.8em
+        color: lighten(#000, 50%)

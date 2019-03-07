@@ -8,8 +8,10 @@
     $url = $_SERVER['REQUEST_URI'];
     $url = explode('?', $url)[1];
 
-    $query_name = "SELECT `name`, `content`, `likes`, `post_id` FROM `post` WHERE `type`='news'";
+    $query_name = "SELECT post.`name`, post.`content`, COUNT(post_likes.`like_id`), post.`post_id` FROM `post` INNER JOIN `post_likes` ON post.`post_id` = post_likes.`post_id` WHERE post.`type` = 'news' GROUP BY post.`post_id` ORDER BY post.`date` DESC";
     $result_name = mysqli_query($link, $query_name) or die("Ошибка " . mysqli_error($link));
+
+    // $query_update = "UPDATE `post` SET post.`likes` = post_likes.count(*) FROM `post` inner join `post_likes` on post.`post_id`"
 
     $query_name_language = "SELECT `name`, `content`, `likes`, `post_id` FROM `post` WHERE `type`='news' AND `language`= '$url'";
     $result_name_language = mysqli_query($link, $query_name_language) or die("Ошибка " . mysqli_error($link));
