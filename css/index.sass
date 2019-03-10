@@ -22,7 +22,6 @@ body, html
     cursor: pointer
     height: 177px
     width: 100%
-    
     &:hover
         background-color: $darkGray
     &_headline
@@ -60,8 +59,9 @@ body, html
             font-family: poiret
             padding: 3px 0 5px 30px
             font-size: 1.3em
+            transition: 0.2s all ease   
             &:hover
-                background-color: $darkGray
+                padding-left: 35px
                 text-decoration: none
                 color: #000
 
@@ -184,19 +184,24 @@ body, html
     background-color: $pink
     margin: 5px 5px 0 -30px
 
+.forum_items
+    background-color: $lightGray
+    border-radius: 15px
+    padding: 10px 30px 30px 30px
+
 .question
     background-color: $lightGray
     width: 100%
     font-size: 1.2em
-    border-radius: 15px
     display: flex
-    margin-bottom: 10px
+    margin-bottom: 0px
     font-family: poiret
     transition: 0.2s all ease
     padding-right: 20px
-    height: 50px
+    height: 60px
+    border-bottom: 1px solid $pink
     &:hover
-        background-color: $darkGray
+        padding-left: 2px
     & a
         color: #000 
         width: 100%
@@ -218,8 +223,163 @@ body, html
     &_name
         height: 29px
         overflow: hidden
-        width: 700px
+        width: 620px
         margin-left: 20px
     &_author
         font-size: 0.8em
         color: lighten(#000, 50%)
+    &_date
+        font-size: 0.7em
+        color: lighten(#000, 50%)
+    &_info
+        width: 90px
+
+.forum
+    &_headline
+        font-family: poiret
+        font-size: 2.4em
+        margin: 0 0 20px 15px
+    &_question
+        font-family: poiret
+        font-size: 1.5em
+        border-left: 1px solid $pink
+        padding-left: 15px
+        margin-bottom: 15px
+        &_info
+            border-left: none
+            font-family: poiret
+            font-size: 1.6em
+            display: flex
+            justify-content: flex-end
+            align-items: center
+            &_date
+                color: lighten(#000, 50%)
+                font-size: 0.8em
+                margin-left: 15px
+            &_author
+                padding-bottom: 6px
+    &_comments_block
+        & h2 
+            font-family: poiret
+            font-size: 2.4em
+            margin-left: 15px
+            margin-bottom: 40px
+    &_comment
+        display: flex
+        border-bottom: 1px solid $pink
+        padding-bottom: 40px
+        margin-bottom: 40px
+        &_image
+            & img
+                width: 90px
+                margin-right: 40px
+                border: 1px solid $darkGray
+                border-radius: 50%
+        &_content
+            &_user
+                display: flex
+                align-items: center
+                &_name
+                    font-family: poiret
+                    font-size: 1.5em
+                    padding-bottom: 5px
+                    margin-right: 15px
+                &_date
+                    font-family: poiret
+                    font-size: 1em
+                    color: lighten(#000, 50%)
+            &_answer
+                font-family: poiret
+                font-size: 1.4em
+                padding-top: 10px
+        &_form
+            display: flex
+            justify-content: flex-end
+            font-family: poiret
+            & form 
+                width: 980px
+                display: flex
+                flex-wrap: wrap
+                justify-content: flex-end
+                & textarea
+                    width: 100%
+                    height: 250px
+                    border-radius: 15px
+                    border: 1px solid $darkGray
+                    background-color: $lightGray
+                    padding: 10px 15px
+                    font-size: 1.3em
+                    margin-bottom: 18px
+                & span
+                    background-color: $darkGray
+                    cursor: pointer
+            &_button
+                background-color: $pink
+                border: 0
+                border-radius: 15px
+                padding: 2px 15px 5px 15px
+                margin-left: 13px
+                font-size: 1.1em
+                transition: 0.2s all ease
+                &:hover
+                    opacity: 0.85
+    &_child_comment
+        display: flex
+        border-bottom: 1px solid $pink
+        padding-bottom: 40px
+        margin-bottom: 40px
+        margin-left: 50px
+        &_image
+            & img
+                width: 90px
+                margin-right: 40px
+                border: 1px solid $darkGray
+                border-radius: 50%
+        &_content
+            &_user
+                display: flex
+                align-items: center
+                &_name
+                    font-family: poiret
+                    font-size: 1.5em
+                    padding-bottom: 5px
+                    margin-right: 15px
+                &_date
+                    font-family: poiret
+                    font-size: 1em
+                    color: lighten(#000, 50%)
+            &_answer
+                font-family: poiret
+                font-size: 1.4em
+                padding-top: 10px
+        &_form
+            display: flex
+            justify-content: flex-end
+            font-family: poiret
+            & form 
+                width: 980px
+                display: flex
+                flex-wrap: wrap
+                justify-content: flex-end
+                & textarea
+                    width: 100%
+                    height: 250px
+                    border-radius: 15px
+                    border: 1px solid $darkGray
+                    background-color: $lightGray
+                    padding: 10px 15px
+                    font-size: 1.3em
+                    margin-bottom: 18px
+                & span
+                    background-color: $darkGray
+                    cursor: pointer
+            &_button
+                background-color: $pink
+                border: 0
+                border-radius: 15px
+                padding: 2px 15px 5px 15px
+                margin-left: 13px
+                font-size: 1.1em
+                transition: 0.2s all ease
+                &:hover
+                    opacity: 0.85

@@ -12,6 +12,7 @@
     $query_name = "SELECT post.`name`, post.`content`, COUNT(`like_id`) FROM `post` INNER JOIN `post_likes` ON post.`post_id` = post_likes.`post_id` WHERE post.`post_id`='$url'";
     $result_name = mysqli_query($link, $query_name) or die("Ошибка " . mysqli_error($link));
     $query_like = "INSERT INTO `post_likes`(`post_id`, `user_id`) VALUES ('$url', '$user_id')";
+    $query_not_like = "DELETE FROM `post_likes` WHERE `post_id` = '$url' AND `user_id` = '$user_id'";
 
     if($result_name)
     {
@@ -22,7 +23,7 @@
         }
         if (isset($_POST['likeBut']))
         {
-            mysqli_query($link, $query_like) or die("Ошибка ". mysqli_error($link));
+            mysqli_query($link, $query_like) or mysqli_query($link, $query_not_like);
         }
         echo "<div class='page_headline'>";
         echo "<div class='page_headline_head'>";

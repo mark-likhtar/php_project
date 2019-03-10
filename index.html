@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+        <input name="test" id="test" icols="30" rows="10"/>
+        <span id="but">frfer</span>
+
+</body>
+</html>
+<script>
+var text = document.getElementById('test');
+var but = document.getElementById('but');
+
+$(document).on("click", "#but", function() {
+  styliString();
+});
+
+function styliString() {
+  if (text.selectionStart != undefined) {
+    var startPos = text.selectionStart;
+    var endPos = text.selectionEnd;
+    var selectedText = text.value.substring(startPos, endPos)
+    console.log(selectedText)
+    }
+        if (selectedText) {
+        var v = text.value.substring(0, startPos);
+        v += '<b>' + selectedText + '</b>';
+        v += text.value.substring(endPos);
+    
+        text.value = v;
+        }
+}
+</script>
