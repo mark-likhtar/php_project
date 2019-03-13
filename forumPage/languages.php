@@ -5,7 +5,7 @@
     $password = "mysql";
     $link = mysqli_connect($host, $user, $password, $database) or die("Ошибка " . mysqli_error($link));
 
-    $query ="SELECT distinct `language` FROM `post`";
+    $query ="SELECT distinct `language` FROM `forum`";
     $result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link));
 
     if($result)

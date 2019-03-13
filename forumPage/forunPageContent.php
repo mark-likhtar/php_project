@@ -4,25 +4,19 @@ $database = "DBlog";
 $user = "mysql";
 $password = "mysql";
 $link = mysqli_connect($host, $user, $password, $database) or die("Ошибка " . mysqli_error($link));
-
 $url = $_SERVER['REQUEST_URI'];
 $url = explode('?', $url)[1];
 $user_id = $_SESSION['id'];
 $comment_text = $_POST['comment_text'];
 $child_comment_text = $_POST['child_comment_text'];
-
 $query_name = "SELECT forum.`name`, forum.`text`, user.`name`, forum.`date` FROM `forum` inner join `user` on forum.`user_id` = user.`user_id` WHERE forum.`forum_id`='$url'";
 $result_name = mysqli_query($link, $query_name) or die("Ошибка " . mysqli_error($link));
-
 $query_comment = "SELECT comment.`comment`, user.`name`, comment.`date`, user.`admin`, comment.`comment_id` FROM `comment` inner join `user` on comment.`user_id` = user.`user_id` WHERE comment.`forum_id`='$url' order by comment.`date`";
 $result_comment = mysqli_query($link, $query_comment) or die("Ошибка " . mysqli_error($link));
-
 $query_comment = "INSERT INTO `comment`(`forum_id`, `user_id`, `comment`) VALUES ('$url', '$user_id','$comment_text')";
-
 if (isset($_POST['comment_submit'])) {
     mysqli_query($link, $query_comment) or die("Ошибка " . mysqli_error($link));
 }
-
 if ($result_name) {
     $rows = mysqli_num_rows($result_name);
     for ($i = 0; $i < $rows; ++$i) {
@@ -76,7 +70,6 @@ if ($result_name) {
             echo "</div>";
             $query_child_comment = "SELECT child_comment.`child_comment_text`, user.`name`, child_comment.`date`, user.`admin` FROM `child_comment` inner join `user` on child_comment.`user_id` = user.`user_id` WHERE child_comment.`comment_id`=$comment";
             $result_child_comment = mysqli_query($link, $query_child_comment) or die("Ошибка " . mysqli_error($link));
-
             $child_query_comment = "INSERT INTO `child_comment`(`comment_id`, `user_id`, `child_comment_text`) VALUES ('$comment', '$user_id','$child_comment_text')";
           
             if (isset($_POST['child_comment_submit'])) {
@@ -130,13 +123,10 @@ if ($_SESSION['login'] == !'') {
 ?>
 <script>
     $('.forum_comments_block').load(document.URL + ' .forum_comments_block');
-
     var text = document.getElementById('comment');
-
     $(document).on("click", "#code", function() {
         code();
     });
-
     function code() {
         if (text.selectionStart != undefined) {
             var startPos = text.selectionStart;
@@ -148,45 +138,35 @@ if ($_SESSION['login'] == !'') {
             var v = text.value.substring(0, startPos);
             v += "<xmp>" + selectedText + "</xmp>";
             v += text.value.substring(endPos);
-
             text.value = v;
         }
     }
-
     $(function() {
         $('#comment').keyup(function(e) {
             if (e.keyCode == 13) {
                 var curr = getCaret(this);
                 var val = $(this).val();
                 var end = val.length;
-
                 $(this).val(val.substr(0, curr) + '<br>' + val.substr(curr, end));
             }
-
         })
     });
-
     function getCaret(el) {
         if (el.selectionStart) {
             return el.selectionStart;
         } else if (document.selection) {
             el.focus();
-
             var r = document.selection.createRange();
             if (r == null) {
                 return 0;
             }
-
             var re = el.createTextRange(),
                 rc = re.duplicate();
             re.moveToBookmark(r.getBookmark());
             rc.setEndPoint('EndToStart', re);
-
             return rc.text.length;
         }
         return 0;
     }
-
     
-
 </script> 

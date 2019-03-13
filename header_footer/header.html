@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#f9faf5">
-    <a class="navbar-brand" href="#"><img src="../logo.png" alt="Logo"></a>
+    <a class="navbar-brand" href="/DBlog/newsPage/news.php"><img src="../logo.png" alt="Logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbar1"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

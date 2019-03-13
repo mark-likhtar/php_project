@@ -26,8 +26,16 @@ session_start();
                     <?php
                         include('languages.php');
                     ?>
+                    <?php
+                        if($_SESSION['admin'] == '1'){
+                            include('addButton.html');
+                        }
+                    ?>
             </div>
             <div class="col-md-9">
+                <?php
+                    include('search.html')
+                ?>
                 <?php
                     include('items.php');
                 ?>
